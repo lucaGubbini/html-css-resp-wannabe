@@ -108,29 +108,72 @@ img {
     margin-bottom: 2.5rem;
 }
 
-/* Responsive design adjustments */
+@media (min-width: 769px) and (max-width: 1160px) {
+    .container {
+        padding: 0 5%;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         width: auto;
         padding: 0 10px;
     }
 
-    .row,
-    .lessons .col,
-    .steps .col {
+    .row {
         flex-direction: column;
-        width: 100%;
     }
 
+    .lessons .col,
+    .steps .col,
     .why-us .col-left,
     .why-us .col-right {
         width: 100%;
     }
+
+    .lessons .col img,
+    .steps .col img {
+        height: auto;
+    }
+
+    .why-us img {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .container {
+        width: auto;
+        padding: 0 15px;
+    }
+
+    .row,
+    .col,
+    .lessons .col,
+    .steps .col,
+    .why-us .col-left,
+    .why-us .col-right {
+        width: 100%;
+        padding: 0;
+    }
+
+    .site-header h1,
+    .text-center h2,
+    .card h3 {
+        width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .site-header,
+    .lessons,
+    .steps,
+    .why-us {
+        padding: 15px 0;
+    }
+
     h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     h2 {
@@ -141,14 +184,22 @@ img {
         font-size: 1.25rem;
     }
 
-    .steps .col img,
-    .lessons .col img {
-        height: 150px;
+    .card img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
     }
-}
 
-@media (min-width: 769px) and (max-width: 1160px) {
-    .container {
-        padding: 0 5%;
+    .card {
+        margin-bottom: 2rem;
+    }
+
+    .why-us img {
+        display: block;
+        margin: 0 auto 1rem;
+    }
+
+    .why-us li {
+        font-size: 1rem;
     }
 }
