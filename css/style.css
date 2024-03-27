@@ -1,15 +1,16 @@
+/* Reset and Base Styles */
 *,
 *::before,
 *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    color: #b8c1ec;
     background: #232946;
+    color: #b8c1ec;
 }
 
 h1,
@@ -19,62 +20,61 @@ h3 {
 }
 
 h1 {
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
 }
 
 h2 {
-    margin-bottom: 2.5rem;
-    font-size: 2rem;
     color: #fffffe;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 h3 {
+    font-size: 1.25rem;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
 }
 
 img {
     max-width: 100%;
 }
 
-.container {
-    width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.row {
-    display: flex;
-}
-
-.col {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
+/* Utilities */
 .text-center {
     text-align: center;
 }
 
+/* Layout */
+.container {
+    margin: auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.col {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
 .site-header {
-    margin-top: 3rem;
+    padding-top: 3rem;
 }
 
-.lessons .col {
-    width: 50%;
-}
-
-.lessons .col img {
-    height: 200px;
-    margin-bottom: 1rem;
+/* Section Specific Styles */
+.lessons .col img,
+.steps .col img {
+    height: auto;
 }
 
 .steps {
-    margin: 3rem 0;
-    padding: 3rem 0;
-    color: #232946;
     background: #eebbc3;
+    color: #232946;
+    padding: 3rem 0;
 }
 
 .steps h2,
@@ -82,25 +82,13 @@ img {
     color: #232946;
 }
 
-.steps .col {
-    width: calc(100% / 3);
-}
-
-.steps .col img {
-    height: 200px;
-    margin-bottom: 1rem;
-}
-
 .why-us {
     margin-bottom: 3rem;
 }
 
-.why-us .col-left {
-    width: 40%;
-}
-
+.why-us .col-left,
 .why-us .col-right {
-    width: 60%;
+    width: 100%;
 }
 
 .why-us li {
@@ -108,98 +96,130 @@ img {
     margin-bottom: 2.5rem;
 }
 
-@media (min-width: 769px) and (max-width: 1160px) {
-    .container {
-        padding: 0 5%;
+/* Tablet Styles */
+@media (min-width: 481px) and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
     }
-}
 
-@media (max-width: 768px) {
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
     .container {
-        width: auto;
         padding: 0 10px;
     }
 
     .row {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .lessons .col,
-    .steps .col,
-    .why-us .col-left,
+    .steps .col {
+        width: 50%;
+    }
+
+    .why-us .col-left {
+        width: 40%;
+    }
+
     .why-us .col-right {
-        width: 100%;
+        width: 60%;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
     }
 
-    .lessons .col img,
-    .steps .col img {
-        height: auto;
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
     }
 
-    .why-us img {
-        width: 100%;
+    h3 {
+        font-size: 1.5rem;
         margin-bottom: 1rem;
+    }
+
+    .container {
+        max-width: 1140px;
+        padding: 0 20px;
+    }
+
+    .row {
+        flex-direction: row;
+    }
+
+    .lessons .col,
+    .steps .col {
+        width: calc(100% / 3);
+    }
+
+    .why-us .col-left {
+        width: 40%;
+    }
+
+    .why-us .col-right {
+        width: 60%;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        width: auto;
-        padding: 0 15px;
+        padding: 0 20px;
+        width: 100%;
     }
 
-    .row,
+    .row {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
     .col,
     .lessons .col,
     .steps .col,
     .why-us .col-left,
     .why-us .col-right {
         width: 100%;
-        padding: 0;
+        margin-bottom: 1rem;
     }
 
     .site-header h1,
     .text-center h2,
-    .card h3 {
-        width: 100%;
-        overflow-wrap: break-word;
-    }
-
-    .site-header,
-    .lessons,
-    .steps,
-    .why-us {
-        padding: 15px 0;
-    }
-
-    h1 {
-        font-size: 1.75rem;
-    }
-
-    h2 {
+    .card h3,
+    .why-us h2,
+    .why-us li h3 {
         font-size: 1.5rem;
+        line-height: 1.2;
+        padding: 0 20px;
     }
 
-    h3 {
-        font-size: 1.25rem;
+    .card .text,
+    .why-us li p {
+        font-size: 1rem;
+        padding: 0 20px;
     }
 
-    .card img {
+    .card img,
+    .why-us img {
         width: 100%;
         height: auto;
         margin-bottom: 1rem;
     }
 
-    .card {
-        margin-bottom: 2rem;
-    }
-
-    .why-us img {
-        display: block;
-        margin: 0 auto 1rem;
-    }
-
+    .card,
     .why-us li {
-        font-size: 1rem;
+        text-align: left;
+        padding: 20px;
     }
 }
